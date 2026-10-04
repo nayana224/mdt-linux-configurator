@@ -1,0 +1,28 @@
+name: MDH250
+manufacturer: MDROBOT
+motor_type: HBLS2D02E0200-D206
+
+electrical:
+  voltage_min_v: 24
+  voltage_max_v: 48
+  rated_current_a: 8
+  rated_power_min_w: 100
+  rated_power_max_w: 350
+
+mechanical:
+  poles: 30
+  rated_torque_nm: 8
+  max_torque_nm: 16
+  wheel_diameter_mm: 206
+
+speed:
+  rated_rpm: 200
+  max_rpm: 300
+
+encoder:
+  resolution_ppr: 4096
+  write_verified: false
+
+notes:
+  - "Hall type encoding for non-special pole counts is poles/2, so 30 poles -> DATA 15."
+  - "Encoder PPR/CPR terminology must be bench-verified before automatic write is enabled."
