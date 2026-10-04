@@ -1,0 +1,27 @@
+services:
+  mdas-2204:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.22.04
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
+  mdas-2404:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.24.04
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
+  mdas-2604:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.26.04
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw

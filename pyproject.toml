@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdt-linux-configurator"
+version = "0.1.0"
+description = "Linux configuration, control, monitoring, and protocol debugging tool for MDROBOT MDT-series motor drivers"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pyserial>=3.5",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.8"]
+test = ["pytest>=8.0"]
+
+[project.scripts]
+mdt-configurator = "mdt_configurator.cli:main"
+mdt-configurator-gui = "mdt_configurator.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
